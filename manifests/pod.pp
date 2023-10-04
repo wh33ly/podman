@@ -28,7 +28,7 @@ define podman::pod (
   require podman::install
 
   # The resource name will be the pod name by default
-  $name_flags = merge({ name => $title }, $flags )
+  $name_flags = stdlib::merge({ name => $title }, $flags )
   $pod_name = $name_flags['name']
 
   # Convert $flags hash to command arguments
